@@ -1,0 +1,44 @@
+.header{
+	height: 120px;
+	background-color: green;
+}
+
+
+div{
+	margin: 5px;
+	border: 3px solid orange;
+	color: white;
+}
+
+#communes, #mains{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#n div{
+	color: green;
+}
+
+#burn {
+    opacity: 30%;
+
+}
+
+#guru.footer{
+	background-color: green;
+	text-align: center;
+	color: white;
+}
+
+.active{
+	background-color: yellow;
+}
+
+.oneAndOnly{
+	border: 8px solid gold;
+	background-color: red;
+}
+
+.hover{
+	background-color: gray;
+}
