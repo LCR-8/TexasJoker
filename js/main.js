@@ -11,7 +11,7 @@ function init(){
 
 	for (n = 0; n < valeur.length; n++){
 		for (i = 0; i < couleur.length; i++){
-			newDeck.push(valeur[n] + couleur[i]);
+			newDeck.push('<div class="card c' + valeur[n] + couleur[i] + '"></div>');
 		}
 	}
 
@@ -19,7 +19,7 @@ function init(){
 		deck = newDeck;
 	}
 
-	md.html(md.html() + '<div>Nouveau Paquet ---> ' + deck + '</div>');
+	//md.html(md.html() + '<div>Nouveau Paquet ---> ' + deck + '</div>');
 
 	brasse();
 }
@@ -37,11 +37,16 @@ function brasse(){
 		deck.push(orig.splice(aleaIndex, 1));
 	}
 
-	md.html(md.html() + '<div>Brasser --->          ' + deck + '</div>');
+	//md.html(md.html() + '<div>Brasser --->          ' + deck + '</div>');
 }
 //+-------------
 function carte(array){
 	array.push(deck.splice(0,1));
+}
+//+-------------
+function mainCartes(deal, cartes){
+	deal.html(cartes[0] + cartes[1]);
+ 	deal.find('.card:nth-child(2)').addClass("secondCard");
 }
 //+-------------
 function guru(speak){
@@ -67,11 +72,12 @@ function texas(){
 				carte(main4);
 				carte(main5);
 			}
-			$('#main1').html('main1: ' + main1);
-			$('#main2').html('main2: ' + main2);
-			$('#main3').html('main3: ' + main3);
-			$('#main4').html('main4: ' + main4);
-			$('#main5').html('main5: ' + main5);
+
+			mainCartes($('#main1'), main1);
+			mainCartes($('#main2'), main2);
+			mainCartes($('#main3'), main3);
+			mainCartes($('#main4'), main4);
+			mainCartes($('#main5'), main5);
 
 			guru('Sélectionnez deux mains...');
 		  break;
